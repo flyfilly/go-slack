@@ -83,7 +83,9 @@ func NewSlack(url, channel, secret string) *Slack {
 func (slack *Slack) DoPost(post Post) (Response, error) {
 	slackResponse := Response{}
 
-	post.Channel = slack.Channel
+	if post.Channel == "" {
+		post.Channel = slack.Channel
+	}
 
 	payload, err := json.Marshal(post)
 

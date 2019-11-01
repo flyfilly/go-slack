@@ -61,6 +61,7 @@ func TestPost(t *testing.T) {
 	actual, err := slack.DoPost(Post{
 		Mrkdwn:  true,
 		Message: "Kill me Please!!",
+		Channel: "#random",
 		Attachments: []Attachment{
 			Attachment{
 				ImageURL:   "https://media.giphy.com/media/1vZcE6QIuvRLJr59UG/giphy.gif",
